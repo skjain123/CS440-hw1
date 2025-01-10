@@ -6,5 +6,4 @@ FROM dept, works, emp
 WHERE dept.did = works.did
 AND works.eid = emp.eid
 AND dept.budget >= 50
-GROUP BY dept.dname
-ORDER BY dept.dname DESC;
+GROUP BY dept.dname;

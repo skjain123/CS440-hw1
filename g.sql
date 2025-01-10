@@ -1,5 +1,5 @@
 SELECT managerid
-FROM (SELECT max(totalBudget), managerid
-        FROM (SELECT sum(budget) as totalBudget, managerid
-                FROM dept
-                GROUP BY managerid));
+FROM (SELECT sum(budget) as totalBudget, managerid
+        FROM dept
+    GROUP BY managerid)
+HAVING totalBudget=max(totalBudget);
